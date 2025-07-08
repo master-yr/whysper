@@ -7,7 +7,11 @@ pre-commit-all:
 
 # Run 'cargo run' on the project
 run *ARGS:
-    cargo run {{ARGS}}
+    # WGPU_BACKEND=gl cargo run {{ARGS}}
+    # WGPU_BACKEND=vulkan VK_ICD_FILENAMES=/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json cargo run {{ARGS}}
+    # RUST_LOG=wgpu_hal=debug WGPU_BACKEND=vulkan VK_ICD_FILENAMES=/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json cargo run {{ARGS}}
+    WGPU_BACKEND=gl cargo run {{ARGS}}
+    # cargo run {{ARGS}}
 
 # Run 'bacon' to run the project (auto-recompiles)
 watch *ARGS:

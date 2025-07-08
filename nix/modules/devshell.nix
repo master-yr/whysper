@@ -1,8 +1,8 @@
-{ inputs, ... }:
-{
+{ inputs, ... }: {
   perSystem = { config, self', pkgs, lib, ... }: {
     devShells.default = pkgs.mkShell {
       name = "whysper-shell";
+      buildInputs = with pkgs; [ alsa-lib ];
       inputsFrom = [
         self'.devShells.rust
         config.pre-commit.devShell # See ./nix/modules/pre-commit.nix
@@ -11,7 +11,9 @@
         just
         nixd # Nix language server
         bacon
-        config.process-compose.cargo-doc-live.outputs.package
+        wget
+        ffmpeg
+        # config.process-compose.cargo-doc-live.outputs.package
       ];
     };
   };

@@ -2,5 +2,8 @@
 /result
 /result-lib
 .direnv
+dataset
+dev-clean.tar.gz
+model*
 
 /.pre-commit-config.yaml
