@@ -19,8 +19,6 @@
 
       # See ./nix/modules/*.nix for the modules that are imported here.
       imports = with builtins;
-        map
-          (fn: ./nix/modules/${fn})
-          (attrNames (readDir ./nix/modules));
+        map (fn: ./nix/modules/${fn}) (attrNames (readDir ./nix/modules));
     };
 }

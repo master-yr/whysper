@@ -8,8 +8,12 @@ version = "0.1.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[features]
+default = []
+cuda = []
 [dependencies]
-burn = { version = "0.17", features = ["ndarray", "train", "wgpu"] }
+burn = { version = "0.17", features = ["ndarray", "train", "wgpu",  "burn-candle", "burn-cuda" ] }
+burn-cuda = "0.17"
 cpal = "0.15"
 hound = "3.5"
 rustfft = "6.2"

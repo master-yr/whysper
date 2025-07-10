@@ -14,7 +14,13 @@ run *ARGS:
     # cargo run {{ARGS}}
 
 train:
-    RUST_LOG=debug cargo run --release -- train ./dataset
+    WGPU_BACKEND=gl RUST_LOG=debug cargo run --release -- train ./dataset
+
+train-cuda:
+    WGPU_BACKEND=gl RUST_LOG=debug cargo run --release --features cuda -- train ./dataset
+
+voice:
+    RUST_LOG=debug cargo run --release -- recognize
 
 # Run 'bacon' to run the project (auto-recompiles)
 watch *ARGS:

@@ -5,6 +5,7 @@
 dataset*
 dev-clean.tar.gz
 model*
+speech_commands*
 
 
 /.pre-commit-config.yaml
