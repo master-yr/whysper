@@ -13,6 +13,9 @@ run *ARGS:
     WGPU_BACKEND=gl cargo run {{ARGS}}
     # cargo run {{ARGS}}
 
+train:
+    RUST_LOG=debug cargo run --release -- train ./dataset
+
 # Run 'bacon' to run the project (auto-recompiles)
 watch *ARGS:
 	bacon --job run -- -- {{ ARGS }}
